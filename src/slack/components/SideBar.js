@@ -22,8 +22,9 @@ export default SideBar;
 const SidbarContainer = styled.div`
   color: white;
   flex: 0.3;
-  background-color: var(--slack-color);
+  background-image: linear-gradient(35deg, #434343 0%, black 100%);
   max-width: 260px;
+  min-width: 200px;
   margin-top: 60px;
 `;
 const SidbarHeader = styled.div``;

@@ -32,7 +32,7 @@ const HeaderContainer = styled.div`
 
   justify-content: space-between;
   padding: 10px 0;
-  background-color: var(--slack-color);
+  background-image: linear-gradient(230deg, #434343 0%, black 100%);
   color: white;
 `;
 
@@ -58,12 +58,16 @@ const HeaderSearch = styled.div`
   flex: 0.4;
   opacity: 1;
   border-radius: 6px;
-  background-color: #421f44;
+  background-image: linear-gradient(
+    25deg,
+    #bdc2e8 0%,
+    #bdc2e8 1%,
+    #e6dee9 100%
+  );
   text-align: center;
   display: flex;
   align-items: center;
-  color: gray;
-  border: 1px gray solid;
+  border: 1px white solid;
   > input {
     background-color: transparent;
     border: none;
