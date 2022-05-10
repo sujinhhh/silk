@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import BookContextProvider from "../contexts/BookContext";
 import BookList from "./BookList";
 import NewBookFoam from "./BookFoam";
+import styled from "styled-components";
 
 function List() {
   return (

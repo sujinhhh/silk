@@ -4,7 +4,8 @@ import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import List from "./components/List";
 import styled from "styled-components";
-import Air from "./components/projects/Air";
+import AirBnb from "./components/projects/AirBnb";
+import Footer from "./components/Footer";
 
 function Slack() {
   return (
@@ -12,14 +13,16 @@ function Slack() {
       <>
         <Header />
         <AppBody>
-          {/* <SideBar /> */}
-
-          {/* <List /> */}
+          <SideBar />
           <Switch>
-            <Route path="/" exact></Route>
-            <Route path="/air" component={Air} />
+            <Main>
+              <Route path="/" exact />
+              <Route path="/air" component={AirBnb} />
+              <Route path="/list" component={List} />
+            </Main>
           </Switch>
         </AppBody>
+        <Footer />
       </>
     </Router>
   );
@@ -30,4 +33,9 @@ export default Slack;
 const AppBody = styled.div`
   display: flex;
   height: 100vh;
+`;
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 80px auto;
 `;

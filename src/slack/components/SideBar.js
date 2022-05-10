@@ -1,18 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import { FiberManualRecord } from "@material-ui/icons";
+import {
+  FiberManualRecord,
+  InboxTwoTone,
+  InsertComment,
+} from "@material-ui/icons";
+import CreateIcon from "@material-ui/icons/Create";
+import SidebarOption from "./SidebarOption";
 
 function SideBar() {
   return (
     <SidbarContainer>
       <SidbarHeader>
         <SidbarInfor>
-          <h2>info</h2>
+          <h2>Web Developer</h2>
           <h3>
             <FiberManualRecord />
+            Sujin Lee
           </h3>
         </SidbarInfor>
+        <CreateIcon />
       </SidbarHeader>
+
+      <SidebarOption Icon={InsertComment} title="Threads" />
+      <SidebarOption Icon={InboxTwoTone} title="Mentions & reactions" />
+      <SidebarOption Icon={InboxTwoTone} title="Mentions & reactions" />
     </SidbarContainer>
   );
 }
@@ -21,14 +33,43 @@ export default SideBar;
 
 const SidbarContainer = styled.div`
   color: white;
-  flex: 0.3;
+  flex: 0.5;
   background-image: linear-gradient(35deg, #434343 0%, black 100%);
   max-width: 260px;
-  min-width: 200px;
   margin-top: 60px;
 `;
-const SidbarHeader = styled.div``;
+const SidbarHeader = styled.div`
+  display: flex;
+  border-bottom: 1px solid #311b92;
+  border-top: 1px solid #311b92;
+  padding-bottom: 10px;
+  padding: 13px;
+
+  > .MuiSvgIcon-root {
+    padding: 8px;
+    color: #49274b;
+    font-size: 18px;
+    background-color: wheat;
+    border-radius: 999px;
+  }
+`;
 const SidbarInfor = styled.div`
+  flex: 1;
   > h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  > h3 {
+    display: flex;
+    font-size: 13px;
+    font-weight: 400;
+    align-items: center;
+  }
+  > h3 > .MuiSvgIcon-root {
+    font-size: 13px;
+    margin-top: 1px;
+    margin-right: 2px;
+    color: #512da8;
   }
 `;

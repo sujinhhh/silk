@@ -8,12 +8,12 @@ const Header = () => {
     <HeaderContainer>
       <HeaderLeft>
         <HeaderAvatar />
-        <AccessTime />
+        {/* <AccessTime /> */}
+        <h2>My React Projects</h2>
       </HeaderLeft>
       <HeaderSearch>
         <SearchTwoTone />
         <input type="text" placeholder="search" />
-        {/* </SearchTwoTone> */}
       </HeaderSearch>
       <HeaderRight>
         <HelpOutline />
@@ -37,7 +37,7 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderLeft = styled.div`
-  flex: 0.3;
+  flex: 0.7;
   display: flex;
 
   align-items: center;
@@ -55,7 +55,8 @@ const HeaderAvatar = styled(Avatar)`
   }
 `;
 const HeaderSearch = styled.div`
-  flex: 0.4;
+  margin-right: 0;
+  flex: 0.2;
   opacity: 1;
   border-radius: 6px;
   background-image: linear-gradient(
@@ -64,10 +65,11 @@ const HeaderSearch = styled.div`
     #bdc2e8 1%,
     #e6dee9 100%
   );
-  text-align: center;
+  text-align: left;
   display: flex;
   align-items: center;
   border: 1px white solid;
+
   > input {
     background-color: transparent;
     border: none;
@@ -75,11 +77,13 @@ const HeaderSearch = styled.div`
     min-width: 30vw;
     outline: 0;
     color: white;
+    font-size: 17px;
+    padding: 5px 0;
   }
 `;
 
 const HeaderRight = styled.div`
-  flex: 0.3;
+  flex: 0.1;
   display: flex;
   align-items: flex-end;
   > .MuiSvgIcon-root {
