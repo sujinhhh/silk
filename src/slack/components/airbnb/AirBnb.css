@@ -1,0 +1,48 @@
+.air-travel {
+  height: 500px;
+  position: relative;
+}
+.air-travel > h1 {
+  position: absolute;
+  top: 10%;
+  text-align: center;
+}
+.addForm {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  display: flex;
+  margin: 0.5rem 0 0;
+  padding: 0 0.5rem 0.25rem;
+  border-bottom: 1px solid #eee;
+}
+.addForm input {
+  width: 200px;
+  margin: 0 3px 0 20px;
+  flex-grow: 1;
+  outline: none;
+  padding: 5px 20px;
+}
+.addForm label {
+  /* position: absolute; */
+  /* left: -99999px; */
+}
+.house {
+  width: 100%;
+}
+button {
+  height: 38px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: rgb(218, 178, 236, 0.4);
+  color: rgb(79, 55, 126);
+  cursor: pointer;
+  border: 1px solid rgb(220, 220, 220);
+}
+button:hover {
+  color: white;
+  background-color: blueviolet;
+  outline: none;
+  transition: all ease-in-out 0.2s;
+}

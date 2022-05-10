@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import AirImg from "./AirImg";
+import Contents from "./Contents";
 
 export default function AirBnb() {
   const [name, setName] = useState("Online Experience");
@@ -10,18 +11,60 @@ export default function AirBnb() {
       id: 1,
       title: "Life lessons with Katie Zaferes",
       img: "./mountain-bike.png",
+      checked: true,
+      rate: "⭐️ 5.0",
     },
     {
       id: 2,
       title: "Learn wedding photography",
       img: "./wedding-photography.png",
+      checked: false,
+      rate: "⭐️ 3.0",
     },
     {
       id: 3,
       title: "Learn wedding photography",
       img: "./image 12.png",
+      checked: true,
+      rate: "⭐️ 3.8",
     },
   ]);
+
+  const [newItem, setNewItem] = useState("");
+
+  const setAndSaveItems = (listItems) => {
+    setItems(listItems);
+    localStorage.setItem("shoppinglist", JSON.stringify(listItems));
+  };
+
+  const handleCheck = (id) => {
+    const listItems = items.map((item) =>
+      item.id === id ? { ...item, checked: !item.checked } : item
+    );
+    setAndSaveItems(listItems);
+  };
+
+  const addItem = (items) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, newItem };
+    const listItems = [...newItem, myNewItem];
+    setNewItem(listItems);
+    localStorage.setItem("travelist", JSON.stringify(listItems));
+  };
+
+  const handleDelete = (id) => {
+    const listItems = items.filter((item) => item.id !== id);
+    setAndSaveItems(listItems);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!newItem) return;
+    // addItem
+    addItem(newItem);
+    setNewItem("");
+    console.log(newItem);
+  };
 
   const buttonStyle = {
     display: "inlineBlock",
@@ -71,19 +114,25 @@ export default function AirBnb() {
           </button>
         </Text>
       </Section>
+      <Contents
+        items={items}
+        handleCheck={handleCheck}
+        handleDelete={handleDelete}
+      />
 
-      <PicSection>
-        {items.map((item) => (
-          <div>
-            <img src={item.img} alt="" />
-            <h4> {item.title} </h4>
-          </div>
-        ))}
-      </PicSection>
+      <AirImg
+        title="Travel is about
+to get a redesign"
+        handleSubmit={handleSubmit}
+        newItem={newItem}
+        setNewItem={setNewItem}
+      />
     </Container>
   );
 }
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   width: 550px;
   font-family: "Poppins", sans-serif;
@@ -125,21 +174,5 @@ const Text = styled.div`
   padding: 25px 0;
   > button {
     margin-left: 5px;
-  }
-`;
-
-const PicSection = styled.div`
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 10px 0px 10px 40px;
-  font-size: 14px;
-  width: 500px;
-  background-color: red;
-  overflow-x: hidden;
-  > div {
-    width: 200px;
-  }
-  > div > img {
-    height: 200px;
   }
 `;

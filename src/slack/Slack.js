@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 import List from "./components/List";
 import styled from "styled-components";
-import AirBnb from "./components/projects/AirBnb";
+import AirBnb from "./components/airbnb/AirBnb";
 import Footer from "./components/Footer";
 
 function Slack() {
@@ -32,7 +32,6 @@ export default Slack;
 
 const AppBody = styled.div`
   display: flex;
-  height: 100vh;
 `;
 const Main = styled.div`
   display: flex;
