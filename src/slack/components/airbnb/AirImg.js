@@ -3,15 +3,20 @@ import { useState } from "react";
 import AddItem from "./AddItem";
 import "./AirBnb.css";
 
-function AirImg({ title = "hahah", handleSubmit, newItem, setNewItem }) {
+function AirImg({
+  title = "hahah",
+  handleSubmit,
+  newItemList,
+  setNewItemList,
+}) {
   return (
     <div>
       <div className="air-travel">
         <h1>{title}</h1>
         <AddItem
           handleSubmit={handleSubmit}
-          newItem={newItem}
-          setNewItem={setNewItem}
+          newItemList={newItemList}
+          setNewItemList={setNewItemList}
         />
 
         <img

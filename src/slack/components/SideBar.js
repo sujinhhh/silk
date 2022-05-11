@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {
   FiberManualRecord,
   InboxTwoTone,
   InsertComment,
+  AccessAlarmTwoTone,
 } from "@material-ui/icons";
 import CreateIcon from "@material-ui/icons/Create";
 import SidebarOption from "./SidebarOption";
@@ -21,9 +23,12 @@ function SideBar() {
         </SidbarInfor>
         <CreateIcon />
       </SidbarHeader>
-
-      <SidebarOption Icon={InsertComment} title="Threads" />
-      <SidebarOption Icon={InboxTwoTone} title="Mentions & reactions" />
+      <Link to="/air">
+        <SidebarOption Icon={InsertComment} title="Airbnb" />
+      </Link>
+      <Link to="/list">
+        <SidebarOption Icon={AccessAlarmTwoTone} title="ToDo List" />
+      </Link>
       <SidebarOption Icon={InboxTwoTone} title="Mentions & reactions" />
     </SidbarContainer>
   );

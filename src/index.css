@@ -3,6 +3,9 @@
 * {
   margin: 0;
 }
+a {
+  text-decoration: none;
+}
 
 body {
   --slack-color: #4a164b;

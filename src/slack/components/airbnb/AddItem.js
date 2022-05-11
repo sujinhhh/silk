@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddItem({ handleSubmit, newItem, setNewItem }) {
+function AddItem({ handleSubmit, setNewItemList, newItemList }) {
   return (
     <form className="addForm" onSubmit={handleSubmit}>
       <label htmlFor="addItem">Add your travel</label>
@@ -10,8 +10,8 @@ function AddItem({ handleSubmit, newItem, setNewItem }) {
         type="text"
         placeholder="Where would you like to Go?"
         required
-        value={newItem}
-        onChange={(e) => setNewItem(e.target.value)}
+        value={newItemList}
+        onChange={(e) => setNewItemList(e.target.value)}
       />
       <button type="submit" aria-label="Add Item">
         Let's go!

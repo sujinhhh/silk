@@ -30,6 +30,9 @@ export default function AirBnb() {
     },
   ]);
 
+  const [newItemList, setNewItemList] = useState(
+    JSON.parse(localStorage.getItem("travelist"))
+  );
   const [newItem, setNewItem] = useState("");
 
   const setAndSaveItems = (listItems) => {
@@ -45,11 +48,15 @@ export default function AirBnb() {
   };
 
   const addItem = (items) => {
-    const id = items.length ? items[items.length - 1].id + 1 : 1;
-    const myNewItem = { id, newItem };
-    const listItems = [...newItem, myNewItem];
-    setNewItem(listItems);
-    localStorage.setItem("travelist", JSON.stringify(listItems));
+    const id = Math.random() * 10;
+
+    const myNewItem = { id, items };
+    const listItem = [...newItemList, myNewItem];
+
+    setNewItemList(listItem);
+    console.log(newItem);
+
+    localStorage.setItem("travelist", JSON.stringify(listItem));
   };
 
   const handleDelete = (id) => {
@@ -63,7 +70,6 @@ export default function AirBnb() {
     // addItem
     addItem(newItem);
     setNewItem("");
-    console.log(newItem);
   };
 
   const buttonStyle = {
@@ -119,13 +125,11 @@ export default function AirBnb() {
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
-
       <AirImg
-        title="Travel is about
-to get a redesign"
+        title="Travel is about to get a redesign"
         handleSubmit={handleSubmit}
-        newItem={newItem}
-        setNewItem={setNewItem}
+        newItemList={newItemList}
+        setNewItemList={setNewItemList}
       />
     </Container>
   );
@@ -157,7 +161,6 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 400px;
   padding: 20px 37px;
 `;
 

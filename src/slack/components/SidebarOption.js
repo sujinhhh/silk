@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function SidebarOption({ title, Icon }) {
   return (
     <SidebarOptionContainer>
-      {Icon && <Icon fontSize="small" styled={{ padding: 10 }} />}
+      {Icon && <Icon fontSize="medium" styled={{ padding: 10 }} />}
       {title && <span>{title}</span>}
     </SidebarOptionContainer>
   );
@@ -13,9 +13,10 @@ export default function SidebarOption({ title, Icon }) {
 const SidebarOptionContainer = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0;
+  margin: 20px 20px;
   color: darkmagenta;
   > .MuiSvgIcon-root {
     margin-right: 5px;
+    color: #d500f9;
   }
 `;

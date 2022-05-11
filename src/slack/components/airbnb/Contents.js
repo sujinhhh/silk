@@ -12,7 +12,7 @@ function Contents({ items, handleCheck, handleDelete }) {
               key={item.id}
               onDoubleClick={() => handleCheck(item.id)}
               style={
-                item.checked ? { boxShadow: "0 2px 20px 10px #d3b8ae" } : null
+                item.checked ? { boxShadow: "0 2px 10px 5px #d3b8ae" } : null
               }
             >
               <img src={item.img} alt="" />
@@ -58,7 +58,6 @@ const PicSection = styled.div`
   padding: 10px;
   font-size: 13px;
   width: 100%;
-  background-color: #efebe9;
 
   > div > img {
     height: 200px;
@@ -75,7 +74,6 @@ const ImageItem = styled.div`
   }
 
   > div > input {
-    width: 2.5rem;
     width: 28px;
     text-align: center;
     min-height: 28px;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Avatar } from "@material-ui/core";
 import { AccessTime, SearchTwoTone, HelpOutline } from "@material-ui/icons";
@@ -6,11 +7,14 @@ import { AccessTime, SearchTwoTone, HelpOutline } from "@material-ui/icons";
 const Header = () => {
   return (
     <HeaderContainer>
-      <HeaderLeft>
-        <HeaderAvatar />
-        {/* <AccessTime /> */}
-        <h2>My React Projects</h2>
-      </HeaderLeft>
+      <Link to="/">
+        <HeaderLeft>
+          {/* <HeaderAvatar /> */}
+          {/* <AccessTime /> */}
+          <img src="./aaaaa.png" alt="" />
+          <h2> React Projects</h2>
+        </HeaderLeft>
+      </Link>
       <HeaderSearch>
         <SearchTwoTone />
         <input type="text" placeholder="search" />
@@ -29,7 +33,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   width: 100%;
   align-items: center;
-
+  z-index: 9999;
   justify-content: space-between;
   padding: 10px 0;
   background-image: linear-gradient(230deg, #434343 0%, black 100%);
@@ -41,10 +45,16 @@ const HeaderLeft = styled.div`
   display: flex;
 
   align-items: center;
-  margin-left: 20px;
+  margin-left: 18vw;
   > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 30px;
+  }
+  h2 {
+    margin-left: 20px;
+  }
+  img {
+    width: 40px;
   }
 `;
 
@@ -59,22 +69,29 @@ const HeaderSearch = styled.div`
   flex: 0.2;
   opacity: 1;
   border-radius: 6px;
-  background-image: linear-gradient(
-    25deg,
-    #bdc2e8 0%,
-    #bdc2e8 1%,
-    #e6dee9 100%
-  );
+  background-image: linear-gradient(to left, #bdbbbe 0%, #9d9ea3 100%),
+    radial-gradient(
+      88% 271%,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(254, 254, 254, 0.25) 1%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    radial-gradient(
+      50% 100%,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  background-blend-mode: normal, lighten, soft-light;
   text-align: left;
   display: flex;
   align-items: center;
-  border: 1px white solid;
+  border: 0.5px white solid;
 
   > input {
     background-color: transparent;
     border: none;
     text-align: center;
-    min-width: 30vw;
+    min-width: 20vw;
     outline: 0;
     color: white;
     font-size: 17px;
