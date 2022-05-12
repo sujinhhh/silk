@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Avatar } from "@material-ui/core";
-import { AccessTime, SearchTwoTone, HelpOutline } from "@material-ui/icons";
+import CreateIcon from "@material-ui/icons/Create";
+import {
+  AccessTime,
+  FiberManualRecord,
+  SearchTwoTone,
+  HelpOutline,
+} from "@material-ui/icons";
 
 const Header = () => {
   return (
@@ -15,11 +21,22 @@ const Header = () => {
           <h2> React Projects</h2>
         </HeaderLeft>
       </Link>
-      <HeaderSearch>
-        <SearchTwoTone />
-        <input type="text" placeholder="search" />
-      </HeaderSearch>
+
       <HeaderRight>
+        <HeaderSearch>
+          <SearchTwoTone />
+          <input type="text" placeholder="search" />
+        </HeaderSearch>
+        <SidbarHeader>
+          <SidbarInfor>
+            <h2>Web Developer</h2>
+            <h3>
+              <FiberManualRecord />
+              Sujin Lee
+            </h3>
+          </SidbarInfor>
+          <CreateIcon />
+        </SidbarHeader>
         <HelpOutline />
       </HeaderRight>
     </HeaderContainer>
@@ -45,7 +62,7 @@ const HeaderLeft = styled.div`
   display: flex;
 
   align-items: center;
-  margin-left: 18vw;
+  margin-left: 20px;
   > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 30px;
@@ -66,7 +83,7 @@ const HeaderAvatar = styled(Avatar)`
 `;
 const HeaderSearch = styled.div`
   margin-right: 0;
-  flex: 0.2;
+  flex: 0.3;
   opacity: 1;
   border-radius: 6px;
   background-image: linear-gradient(to left, #bdbbbe 0%, #9d9ea3 100%),
@@ -82,7 +99,7 @@ const HeaderSearch = styled.div`
       rgba(0, 0, 0, 0.3) 100%
     );
   background-blend-mode: normal, lighten, soft-light;
-  text-align: left;
+  text-align: center;
   display: flex;
   align-items: center;
   border: 0.5px white solid;
@@ -99,10 +116,45 @@ const HeaderSearch = styled.div`
   }
 `;
 
-const HeaderRight = styled.div`
-  flex: 0.1;
+const SidbarHeader = styled.div`
   display: flex;
-  align-items: flex-end;
+  border-bottom: 1px solid #311b92;
+  border-top: 1px solid #311b92;
+  padding-bottom: 10px;
+  padding: 13px;
+
+  > .MuiSvgIcon-root {
+    padding: 8px;
+    color: #49274b;
+    font-size: 18px;
+    background-color: wheat;
+    border-radius: 999px;
+  }
+`;
+const SidbarInfor = styled.div`
+  padding: 0 1rem;
+  > h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  > h3 {
+    font-size: 13px;
+    font-weight: 400;
+    align-items: center;
+  }
+  > h3 > .MuiSvgIcon-root {
+    font-size: 13px;
+    margin-top: 1px;
+    margin-right: 2px;
+    color: #512da8;
+  }
+`;
+const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
   > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 20px;

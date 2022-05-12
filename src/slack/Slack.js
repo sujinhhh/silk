@@ -36,6 +36,6 @@ const AppBody = styled.div`
 const Main = styled.div`
   display: flex;
   justify-content: center;
-  margin: 80px auto;
+  margin: 120px auto;
   min-height: 100vh;
 `;

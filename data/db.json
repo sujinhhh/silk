@@ -1,0 +1,19 @@
+{
+    "items" : [
+        {
+            "id":1,
+            "checked":false,
+            "item" :"이번달 말까지 57kg"
+        },
+        {
+            "id":2,
+            "checked":false,
+            "item" :"다음달 초까지 56kg"
+        },
+        {
+            "id":3,
+            "checked":false,
+            "item" :"6월 12일 까지 55kg"
+        }
+    ]
+}

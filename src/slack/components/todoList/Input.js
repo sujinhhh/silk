@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import colorNames from "colornames";
 
 export default function Input({
   colorValue,
@@ -8,6 +7,7 @@ export default function Input({
   setIsDarkText,
   isDarkText,
   setHexValue,
+  setColor,
 }) {
   return (
     <ColorForm onSubmit={(e) => e.preventDefault()}>
@@ -18,12 +18,9 @@ export default function Input({
         placeholder="Add color name"
         required
         value={colorValue}
-        onChange={(e) => {
-          setColorValue(e.target.value);
-          setHexValue(colorNames(e.target.value));
-        }}
+        onChange={(e) => setColor(e)}
       />
-      <button type="button" onClick={() => setIsDarkText(!isDarkText)}>
+      <button type="button" onClick={(e) => setIsDarkText(!isDarkText)}>
         Toggle text color
       </button>
     </ColorForm>

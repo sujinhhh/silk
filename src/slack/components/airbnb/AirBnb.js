@@ -107,6 +107,18 @@ export default function AirBnb() {
           </defs>
         </svg>
       </Navbar>
+      <AirImg
+        title="Travel is about to get a redesign"
+        handleSubmit={handleSubmit}
+        newItemList={newItemList}
+        setNewItemList={setNewItemList}
+      />
+      <Contents
+        items={items}
+        handleCheck={handleCheck}
+        handleDelete={handleDelete}
+      />
+
       <Section>
         <Img />
         <Text>
@@ -120,17 +132,6 @@ export default function AirBnb() {
           </button>
         </Text>
       </Section>
-      <Contents
-        items={items}
-        handleCheck={handleCheck}
-        handleDelete={handleDelete}
-      />
-      <AirImg
-        title="Travel is about to get a redesign"
-        handleSubmit={handleSubmit}
-        newItemList={newItemList}
-        setNewItemList={setNewItemList}
-      />
     </Container>
   );
 }
