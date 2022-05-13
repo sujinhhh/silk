@@ -5,7 +5,7 @@ function FetchList({ list }) {
     <div>
       <ul>
         {list.map((item) => {
-          return <li key={item.id}>{item.item}</li>;
+          return <li key={item.id}>{item.title}</li>;
         })}
       </ul>
     </div>

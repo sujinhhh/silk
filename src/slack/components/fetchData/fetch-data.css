@@ -1,0 +1,21 @@
+.fetch-data_conainer {
+  display: flex;
+  margin-top: -33px;
+  width: 100%;
+  justify-content: center;
+}
+.fetch-form {
+  width: 80%;
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+}
+.fetch-form > button {
+  width: 33.33%;
+  text-align: center;
+}
+
+.fetch-ul {
+  width: 100%;
+  margin-top: 4rem;
+}

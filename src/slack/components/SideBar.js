@@ -19,7 +19,9 @@ function SideBar() {
       <Link to="/list">
         <SidebarOption Icon={AccessAlarmTwoTone} title="ToDo List" />
       </Link>
-      <SidebarOption Icon={InboxTwoTone} title="Mentions & reactions" />
+      <Link to="/fetch">
+        <SidebarOption Icon={InboxTwoTone} title="Fetch Data" />
+      </Link>
     </SidbarContainer>
   );
 }

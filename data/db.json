@@ -1,19 +1,25 @@
 {
     "items" : [
         {
-            "id":1,
-            "checked":false,
-            "item" :"이번달 말까지 57kg"
-        },
-        {
-            "id":2,
-            "checked":false,
-            "item" :"다음달 초까지 56kg"
-        },
-        {
-            "id":3,
-            "checked":false,
-            "item" :"6월 12일 까지 55kg"
-        }
+            "id": 1,
+            "title": "Life lessons with Katie Zaferes",
+            "img": "./mountain-bike.png",
+            "checked": true,
+            "rate": "⭐️ 5.0"
+          },
+          {
+            "id": 2,
+            "title": "Learn wedding photography",
+            "img": "./wedding-photography.png",
+            "checked": false,
+            "rate": "⭐️ 3.0"
+          },
+          {
+            "id": 3,
+            "title": "Learn wedding photography",
+            "img": "./image 12.png",
+            "checked": true,
+            "rate": "⭐️ 3.8"
+          }
     ]
 }

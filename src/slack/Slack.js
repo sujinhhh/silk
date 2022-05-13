@@ -6,6 +6,7 @@ import List from "./components/todoList/List";
 import styled from "styled-components";
 import AirBnb from "./components/airbnb/AirBnb";
 import Footer from "./components/Footer";
+import FetchData from "./components/fetchData/FetchData";
 
 function Slack() {
   return (
@@ -13,12 +14,13 @@ function Slack() {
       <>
         <Header />
         <AppBody>
-          <SideBar />
+          <SideBar style={{ flex: 1 }} />
           <Switch>
             <Main>
               <Route path="/" exact />
               <Route path="/air" component={AirBnb} />
               <Route path="/list" component={List} />
+              <Route path="/fetch" component={FetchData} />
             </Main>
           </Switch>
         </AppBody>
@@ -34,8 +36,9 @@ const AppBody = styled.div`
   display: flex;
 `;
 const Main = styled.div`
+  flex: 2;
   display: flex;
   justify-content: center;
-  margin: 120px auto;
+  padding-top: 120px;
   min-height: 100vh;
 `;
