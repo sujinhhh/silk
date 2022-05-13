@@ -1,11 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;400&display=swap");
+
 .fetch-data_conainer {
   display: flex;
   margin-top: -33px;
   width: 100%;
-  justify-content: center;
+  justify-content: left;
 }
 .fetch-form {
-  width: 80%;
+  width: 88%;
   position: fixed;
   display: flex;
   justify-content: space-evenly;
@@ -17,5 +19,28 @@
 
 .fetch-ul {
   width: 100%;
-  margin-top: 4rem;
+}
+
+table {
+  font-family: Mukta, sans-serif;
+  /* border-collapse: collapse; */
+  box-shadow: 0 5px 10px rgb(155, 100, 180, 0.3);
+  background-color: white;
+  margin: 3rem 2rem;
+  overflow: hidden;
+}
+.row-tr {
+  padding: 2rem;
+}
+tbody {
+  box-shadow: 0 5px 10px rgb(155, 100, 180, 0.3);
+}
+
+td {
+  padding: 1rem 1rem;
+  border: 0.5px solid rgba(123, 141, 158, 0.3);
+}
+
+tr:nth-child(2n) {
+  background-color: rgba(163, 204, 240, 0.3);
 }

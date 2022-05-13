@@ -7,7 +7,7 @@ import Table from "./Table";
 
 function FetchData() {
   const API_URL = "https://jsonplaceholder.typicode.com/";
-  const [reqType, setReqType] = useState("");
+  const [reqType, setReqType] = useState("posts");
   const [items, setItems] = useState([]);
 
   useEffect(() => {
