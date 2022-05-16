@@ -10,7 +10,7 @@ import {
   HelpOutline,
 } from "@material-ui/icons";
 
-const Header = () => {
+const Header = ({ search, setSearch }) => {
   return (
     <HeaderContainer>
       <Link to="/">
@@ -23,9 +23,16 @@ const Header = () => {
       </Link>
 
       <HeaderRight>
-        <HeaderSearch>
+        <HeaderSearch onSubmit={(e) => e.preventDefault()}>
           <SearchTwoTone />
-          <input type="text" placeholder="search" />
+          <label htmlFor="search">Search Posts</label>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search Posts"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
         </HeaderSearch>
         <SidbarHeader>
           <SidbarInfor>
@@ -81,7 +88,7 @@ const HeaderAvatar = styled(Avatar)`
     opacity: 0.8;
   }
 `;
-const HeaderSearch = styled.div`
+const HeaderSearch = styled.form`
   margin-right: 0;
   flex: 0.3;
   opacity: 1;
@@ -103,7 +110,10 @@ const HeaderSearch = styled.div`
   display: flex;
   align-items: center;
   border: 0.5px white solid;
-
+  > label {
+    position: absolute;
+    left: -99999px;
+  }
   > input {
     background-color: transparent;
     border: none;

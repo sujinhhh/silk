@@ -22,6 +22,9 @@ function SideBar() {
       <Link to="/fetch">
         <SidebarOption Icon={InboxTwoTone} title="Fetch Data" />
       </Link>
+      <Link to="/blog">
+        <SidebarOption Icon={InboxTwoTone} title="Blog" />
+      </Link>
     </SidbarContainer>
   );
 }
@@ -31,7 +34,9 @@ export default SideBar;
 const SidbarContainer = styled.div`
   color: white;
   flex: 0.5;
+
   background-image: linear-gradient(35deg, #434343 0%, black 100%);
   max-width: 260px;
+  min-width: 150px;
   padding-top: 100px;
 `;
