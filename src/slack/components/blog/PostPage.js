@@ -2,8 +2,10 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 
 function PostPage({ posts, handleDelete }) {
+  console.log(posts);
   const { id } = useParams();
   const post = posts.find((post) => post.id.toString() === id);
+  console.log(post);
   return (
     <main className="PostPage">
       <article className="post">
@@ -13,6 +15,14 @@ function PostPage({ posts, handleDelete }) {
             <p className="postDate">{post.datetime}</p>
             <p className="postBody">{post.body}</p>
             <button onClick={() => handleDelete(post.id)}>Delete Post</button>
+          </>
+        )}
+        {!post && (
+          <>
+            <h2>Post has been deleted</h2>
+            <p>
+              <Link to="/blog/about">Go to Main Page</Link>
+            </p>
           </>
         )}
       </article>

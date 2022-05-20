@@ -4,7 +4,9 @@ import styled from "styled-components";
 function Footer() {
   const today = new Date();
   return (
-    <FooterContainer> Copyright &copy; {today.getFullYear()}</FooterContainer>
+    <FooterContainer>
+      Copyright &copy; {today.getFullYear()} Sujin Lee
+    </FooterContainer>
   );
 }
 

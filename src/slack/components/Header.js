@@ -21,7 +21,16 @@ const Header = ({ search, setSearch }) => {
           <h2> React Projects</h2>
         </HeaderLeft>
       </Link>
-
+      <Nav className="blog-nav">
+        <ul>
+          <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/post">Post</Link>
+          </li>
+        </ul>
+      </Nav>
       <HeaderRight>
         <HeaderSearch onSubmit={(e) => e.preventDefault()}>
           <SearchTwoTone />
@@ -88,6 +97,15 @@ const HeaderAvatar = styled(Avatar)`
     opacity: 0.8;
   }
 `;
+
+const Nav = styled.nav`
+  width: 100%;
+  margin: 0 5%;
+  > ul {
+    padding: 0;
+  }
+`;
+
 const HeaderSearch = styled.form`
   margin-right: 0;
   flex: 0.3;
