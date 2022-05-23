@@ -10,56 +10,109 @@ import {
   HelpOutline,
 } from "@material-ui/icons";
 
-const Header = ({ search, setSearch }) => {
+const Header = ({ search, setSearch, width }) => {
   return (
-    <HeaderContainer>
-      <Link to="/">
-        <HeaderLeft>
-          {/* <HeaderAvatar /> */}
-          {/* <AccessTime /> */}
-          <img src="./aaaaa.png" alt="" />
-          <h2> React Projects</h2>
-        </HeaderLeft>
-      </Link>
-      <Nav className="blog-nav">
-        <ul>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-          <li>
-            <Link to="/post">Add Post</Link>
-          </li>
-        </ul>
-      </Nav>
-      <HeaderRight>
-        <HeaderSearch onSubmit={(e) => e.preventDefault()}>
-          <SearchTwoTone />
-          <label htmlFor="search">Search Posts</label>
-          <input
-            id="search"
-            type="text"
-            placeholder="Search Posts"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </HeaderSearch>
-        <SidbarHeader>
-          <SidbarInfor>
-            <h2>Web Developer</h2>
-            <h3>
-              <FiberManualRecord />
-              Sujin Lee
-            </h3>
-          </SidbarInfor>
-          <CreateIcon />
-        </SidbarHeader>
-        <HelpOutline />
-      </HeaderRight>
-    </HeaderContainer>
+    <>
+      {width < 768 ? (
+        <HeaderMobileContainer>
+          <Link to="/">
+            <HeaderLeft>
+              <img src="./aaaaa.png" alt="" />
+              <h2> React Projects</h2>
+            </HeaderLeft>
+          </Link>
+          <HeaderRight>
+            <Nav className="blog-nav">
+              <ul>
+                <li>
+                  <Link to="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link to="/post">Add Post</Link>
+                </li>
+              </ul>
+            </Nav>
+
+            <HeaderSearch onSubmit={(e) => e.preventDefault()}>
+              <SearchTwoTone />
+              <label htmlFor="search">Search Posts</label>
+              <input
+                id="search"
+                type="text"
+                placeholder="Search Posts"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </HeaderSearch>
+          </HeaderRight>
+        </HeaderMobileContainer>
+      ) : (
+        <HeaderContainer>
+          <Link to="/">
+            <HeaderLeft>
+              {/* <HeaderAvatar /> */}
+              {/* <AccessTime /> */}
+              <img src="./aaaaa.png" alt="" />
+              <h2> React Projects</h2>
+            </HeaderLeft>
+          </Link>
+          <Nav className="blog-nav">
+            <ul>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/post">Add Post</Link>
+              </li>
+            </ul>
+          </Nav>
+          <HeaderRight>
+            <HeaderSearch onSubmit={(e) => e.preventDefault()}>
+              <SearchTwoTone />
+              <label htmlFor="search">Search Posts</label>
+              <input
+                id="search"
+                type="text"
+                placeholder="Search Posts"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </HeaderSearch>
+            <SidbarHeader>
+              <SidbarInfor>
+                <h2>Web Developer</h2>
+                <h3>
+                  <FiberManualRecord />
+                  Sujin Lee
+                </h3>
+              </SidbarInfor>
+              <CreateIcon />
+            </SidbarHeader>
+            <HelpOutline />
+          </HeaderRight>
+        </HeaderContainer>
+      )}
+    </>
   );
 };
 
 export default Header;
+
+const HeaderMobileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  padding: 10px 0;
+  background-image: linear-gradient(230deg, #434343 0%, black 100%);
+  color: white;
+  > li {
+    padding: 1rem;
+    color: white;
+  }
+`;
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -105,6 +158,9 @@ const Nav = styled.nav`
   max-width: 400px;
   > ul {
     padding: 0;
+  }
+  > h2 {
+    color: white;
   }
 `;
 

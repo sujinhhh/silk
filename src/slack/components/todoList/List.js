@@ -20,23 +20,23 @@ function List() {
 
   useEffect(() => {
     setColorValue(JSON.parse(localStorage.getItem("setcolor")));
-    const fetchItems = async () => {
-      try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw Error("Did not received data");
-        const data = await response.json();
-        setList(data);
-        setFetchError(null);
-      } catch (err) {
-        console.log(err.message);
-        setFetchError(err.message);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    setTimeout(() => {
-      (async () => await fetchItems())();
-    }, 3000);
+    // const fetchItems = async () => {
+    //   try {
+    //     const response = await fetch(API_URL);
+    //     if (!response.ok) throw Error("Did not received data");
+    //     const data = await response.json();
+    //     setList(data);
+    //     setFetchError(null);
+    //   } catch (err) {
+    //     console.log(err.message);
+    //     setFetchError(err.message);
+    //   } finally {
+    //     setIsLoading(false);
+    //   }
+    // };
+    // setTimeout(() => {
+    //   (async () => await fetchItems())();
+    // }, 3000);
   }, []);
 
   const setColor = (e) => {
@@ -68,13 +68,13 @@ function List() {
           />
         </BookContextProvider>
 
-        <main>
+        {/* <main>
           {isLoading && <p> Loading Time... </p>}
           {!fetchError && !isLoading && <FetchList list={list} />}
           {fetchError && (
             <p style={{ color: "red" }}> {`Error:${fetchError}`} </p>
           )}
-        </main>
+        </main> */}
       </div>
     </Container>
   );

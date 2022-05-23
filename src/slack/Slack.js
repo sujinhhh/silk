@@ -19,13 +19,17 @@ import NewPost from "./components/blog/NewPost";
 import { format } from "date-fns";
 import "./blog.css";
 import api from "../api/posts";
+import EditPost from "./components/blog/EditPost";
+import useWindowSize from "../hooks/useWindowSize";
 
 function Slack() {
   const history = useHistory();
   const [posts, setPosts] = useState([]);
-
+  const { width } = useWindowSize();
   const [postTitle, setPostTitle] = useState("");
+  const [editTitle, setEditTitle] = useState("");
   const [postBody, setPostBody] = useState("");
+  const [editBody, setEditBody] = useState("");
   const [done, setDone] = useState(false);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -75,6 +79,22 @@ function Slack() {
     }
   };
 
+  const handleEdit = async (id) => {
+    const datetime = format(new Date(), "MMMM dd, yyyy pp");
+    const updatedPost = { id, title: editTitle, datetime, body: editBody };
+    try {
+      const response = await api.put(`/posts/${id}`, updatedPost);
+      setPosts(
+        posts.map((post) => (post.id === id ? { ...response.date } : post))
+      );
+      setEditBody("");
+      setEditTitle("");
+      history.push("/blog");
+    } catch (err) {
+      console.log(` Error : ${err.message}`);
+    }
+  };
+
   const handleDelete = async (id) => {
     try {
       await api.delete(`/posts/${id}`);
@@ -92,6 +112,7 @@ function Slack() {
         setSearch={setSearch}
         searchResults={searchResults}
         setSearchResults={setSearchResults}
+        width={width}
       />
       <AppBody>
         <SideBar style={{ flex: 1 }} />
@@ -101,7 +122,7 @@ function Slack() {
             <Route path="/air" component={AirBnb} />
             <Route path="/list" component={List} />
             <Route path="/fetch" component={FetchData} />
-            <Route exact path="/blog">
+            <Route exact path="/blog" width={width}>
               {searchResults && <BlogHome posts={searchResults} />}
               {!searchResults && <Missing />}
             </Route>
@@ -114,6 +135,17 @@ function Slack() {
                 setPostBody={setPostBody}
                 done={done}
                 setDone={setDone}
+              />
+            </Route>
+            <Route path="/edit/:id">
+              <EditPost
+                handleEdit={handleEdit}
+                posts={posts}
+                setPostTitle={setPostTitle}
+                editBody={editBody}
+                setEditBody={setEditBody}
+                setEditTitle={setEditTitle}
+                editTitle={editTitle}
               />
             </Route>
             <Route path="/post/:id">
