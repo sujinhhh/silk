@@ -22,7 +22,7 @@ function SideBar() {
       <Link to="/fetch">
         <SidebarOption Icon={InboxTwoTone} title="Fetch Data" />
       </Link>
-      <Link to="/blog/about">
+      <Link to="/blog">
         <SidebarOption Icon={InboxTwoTone} title="Blog" />
       </Link>
     </SidbarContainer>

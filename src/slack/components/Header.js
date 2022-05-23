@@ -27,7 +27,7 @@ const Header = ({ search, setSearch }) => {
             <Link to="/blog">Blog</Link>
           </li>
           <li>
-            <Link to="/post">Post</Link>
+            <Link to="/post">Add Post</Link>
           </li>
         </ul>
       </Nav>
@@ -100,7 +100,9 @@ const HeaderAvatar = styled(Avatar)`
 
 const Nav = styled.nav`
   width: 100%;
-  margin: 0 5%;
+  margin: 0 2%;
+  place-content: left;
+  max-width: 400px;
   > ul {
     padding: 0;
   }

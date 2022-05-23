@@ -19,9 +19,9 @@ function PostPage({ posts, handleDelete }) {
         )}
         {!post && (
           <>
-            <h2>Post has been deleted</h2>
+            <h2>Post has not found</h2>
             <p>
-              <Link to="/blog/about">Go to Main Page</Link>
+              <Link to="/blog">Go to Main Page</Link>
             </p>
           </>
         )}
