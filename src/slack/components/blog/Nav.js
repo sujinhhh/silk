@@ -5,7 +5,7 @@ function Nav() {
   return (
     <nav className="blog-nav">
       <ul>
-        <li>
+        <li style={{ color: "white" }}>
           <Link to="/blog">Home</Link>
         </li>
         <li>

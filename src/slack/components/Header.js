@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Avatar } from "@material-ui/core";
 import CreateIcon from "@material-ui/icons/Create";
+
 import {
-  AccessTime,
   FiberManualRecord,
   SearchTwoTone,
   HelpOutline,
@@ -18,7 +17,9 @@ const Header = ({ search, setSearch, width }) => {
           <Link to="/">
             <HeaderLeft>
               <img src="./aaaaa.png" alt="" />
-              <h2> React Projects</h2>
+              <h3>
+                <strong>P</strong>rojects
+              </h3>
             </HeaderLeft>
           </Link>
           <HeaderRight>
@@ -53,20 +54,21 @@ const Header = ({ search, setSearch, width }) => {
               {/* <HeaderAvatar /> */}
               {/* <AccessTime /> */}
               <img src="./aaaaa.png" alt="" />
-              <h2> React Projects</h2>
+              <h1>Projects</h1>
             </HeaderLeft>
           </Link>
-          <Nav className="blog-nav">
-            <ul>
-              <li>
-                <Link to="/blog">Blog</Link>
-              </li>
-              <li>
-                <Link to="/post">Add Post</Link>
-              </li>
-            </ul>
-          </Nav>
           <HeaderRight>
+            <Nav className="blog-nav">
+              <ul>
+                <li>
+                  <Link to="/blog">Blog</Link>
+                </li>
+                <li>
+                  <Link to="/post">Add Post</Link>
+                </li>
+              </ul>
+            </Nav>
+
             <HeaderSearch onSubmit={(e) => e.preventDefault()}>
               <SearchTwoTone />
               <label htmlFor="search">Search Posts</label>
@@ -129,25 +131,22 @@ const HeaderContainer = styled.div`
 const HeaderLeft = styled.div`
   flex: 0.7;
   display: flex;
-
   align-items: center;
   margin-left: 20px;
   > .MuiSvgIcon-root {
     margin-left: auto;
     margin-right: 30px;
   }
-  h2 {
-    margin-left: 20px;
+  h1 {
+    font-size: 2.7rem;
+    margin-left: 10px;
+    bottom: 30%;
+    right: -60px;
+    color: #ff8a80;
+    font-family: "Pangolin", cursive;
   }
   img {
-    width: 40px;
-  }
-`;
-
-const HeaderAvatar = styled(Avatar)`
-  cursor: pointer;
-  :hover {
-    opacity: 0.8;
+    width: 100px;
   }
 `;
 

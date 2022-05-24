@@ -21,6 +21,7 @@ import "./blog.css";
 import api from "../api/posts";
 import EditPost from "./components/blog/EditPost";
 import useWindowSize from "../hooks/useWindowSize";
+import todoList from "./components/todoList/todoList";
 
 function Slack() {
   const history = useHistory();
@@ -120,7 +121,7 @@ function Slack() {
           <Main>
             <Route exact path="/" />
             <Route path="/air" component={AirBnb} />
-            <Route path="/list" component={List} />
+            <Route path="/list" component={todoList} />
             <Route path="/fetch" component={FetchData} />
             <Route exact path="/blog" width={width}>
               {searchResults && <BlogHome posts={searchResults} />}
@@ -169,7 +170,8 @@ const Main = styled.div`
   flex: 2;
   display: flex;
   justify-content: center;
-  padding-top: 120px;
+  margin-top: 100px;
+  width: 100%;
   height: 100vh;
   overflow-y: auto;
 `;

@@ -6,17 +6,17 @@ import NewBookFoam from "./BookFoam";
 import styled from "styled-components";
 import Input from "./Input";
 import colorNames from "colornames";
-import FetchList from "./FetchList";
-import apiRequest from "../todoList/apiRequest";
+// import FetchList from "./FetchList";
+// import apiRequest from "../todoList/apiRequest";
 
 function List() {
-  const API_URL = "http://localhost:3500/items";
-  const [list, setList] = useState([]);
+  // const API_URL = "http://localhost:3500/items";
+  // const [list, setList] = useState([]);
   const [colorValue, setColorValue] = useState([]);
   const [hexValue, setHexValue] = useState("");
   const [isDarkText, setIsDarkText] = useState(true);
-  const [fetchError, setFetchError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [fetchError, setFetchError] = useState(null);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setColorValue(JSON.parse(localStorage.getItem("setcolor")));
@@ -52,8 +52,8 @@ function List() {
         color: isDarkText ? "#000" : "#fff",
       }}
     >
-      <div>
-        <BookContextProvider>
+      <BookContextProvider>
+        <Section>
           <Navbar />
           <BookList />
           <NewBookFoam />
@@ -66,16 +66,16 @@ function List() {
             setIsDarkText={setIsDarkText}
             setColor={setColor}
           />
-        </BookContextProvider>
+        </Section>
+      </BookContextProvider>
 
-        {/* <main>
+      {/* <main>
           {isLoading && <p> Loading Time... </p>}
           {!fetchError && !isLoading && <FetchList list={list} />}
           {fetchError && (
             <p style={{ color: "red" }}> {`Error:${fetchError}`} </p>
           )}
         </main> */}
-      </div>
     </Container>
   );
 }
@@ -84,9 +84,14 @@ export default List;
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
-  width: 50vw;
-  height: 50vh;
+  flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100vh;
   padding: 3rem;
+`;
+const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

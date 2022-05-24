@@ -57,8 +57,7 @@ const PicSection = styled.div`
   flex-direction: row-reverse;
   padding: 10px;
   font-size: 13px;
-  width: 100%;
-
+  margin-bottom: 40px;
   > div > img {
     height: 200px;
   }
@@ -71,6 +70,7 @@ const ImageItem = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 100%;
   }
 
   > div > input {
