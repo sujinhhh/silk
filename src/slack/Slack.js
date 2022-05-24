@@ -22,10 +22,36 @@ import api from "../api/posts";
 import EditPost from "./components/blog/EditPost";
 import useWindowSize from "../hooks/useWindowSize";
 import todoList from "./components/todoList/todoList";
+import MainHome from "./components/main/MainHome";
 
 function Slack() {
   const history = useHistory();
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      title: "1st post",
+      datetime: "July 16, 2021 11:47:39 AM",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    },
+    {
+      id: 2,
+      title: "Second post",
+      datetime: "July 16, 2021 11:47:48 AM",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. two",
+    },
+    {
+      id: 3,
+      title: "3rd post",
+      datetime: "July 16, 2021 11:47:39 AM",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    },
+    {
+      id: 4,
+      title: "4th post",
+      datetime: "July 16, 2021 11:47:48 AM",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. two",
+    },
+  ]);
   const { width } = useWindowSize();
   const [postTitle, setPostTitle] = useState("");
   const [editTitle, setEditTitle] = useState("");
@@ -119,7 +145,7 @@ function Slack() {
         <SideBar style={{ flex: 1 }} />
         <Switch>
           <Main>
-            <Route exact path="/" />
+            <Route exact path="/" component={MainHome} />
             <Route path="/air" component={AirBnb} />
             <Route path="/list" component={todoList} />
             <Route path="/fetch" component={FetchData} />

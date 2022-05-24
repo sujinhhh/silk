@@ -36,5 +36,5 @@ const SidbarContainer = styled.div`
   background-image: linear-gradient(35deg, #434343 0%, black 100%);
   max-width: 260px;
   min-width: 150px;
-  padding-top: 100px;
+  padding-top: 120px;
 `;

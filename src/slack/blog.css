@@ -14,7 +14,7 @@
 
 .blog-nav {
   flex-direction: column;
-  font-size: 1.275rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 .blog-searchForm {
@@ -40,19 +40,18 @@
   flex-wrap: nowrap;
 }
 .blog-nav li {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .blog-nav li:hover,
 .blog-nav li:focus {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .blog-nav li:hover,
 .blog-nav li:focus,
 .blog-nav li:hover a,
 .blog-nav li:focus a {
-  background-color: #eee;
-  color: #333;
+  /* color: #333; */
   transition: all 0.3s ease-in-out;
 }
 
@@ -175,7 +174,7 @@
   .blog-nav li:focus,
   .blog-nav li:hover a,
   .blog-nav li:focus a {
-    color: #333;
+    color: rgb(185, 113, 6);
   }
 
   .searchForm {
