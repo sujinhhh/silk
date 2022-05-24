@@ -10,7 +10,7 @@ function AirImg({
   setNewItemList,
 }) {
   return (
-    <div>
+    <div className="air-container">
       <div className="air-travel">
         <h1>{title}</h1>
         <AddItem

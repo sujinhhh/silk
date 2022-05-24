@@ -139,7 +139,7 @@ export default function AirBnb() {
 }
 const Test = styled.div`
   flex: 1;
-  background-color: red;
+  background-color: black;
   display: flex;
   justify-content: center;
 `;
@@ -160,7 +160,6 @@ const Navbar = styled.div`
   height: 72px;
   left: 0px;
   top: 0px;
-  background: #ffffff;
   box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
   > svg {
     padding-left: 20px;
