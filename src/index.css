@@ -20,3 +20,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  --button-white: rgba(248, 175, 187, 0.934);
+  --button-dark: rgb(128, 0, 0, 0.5);
+}

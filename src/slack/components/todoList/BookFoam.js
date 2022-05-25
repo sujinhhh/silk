@@ -14,6 +14,7 @@ const NewBookFoam = () => {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        className="color-input-dark"
         type="text"
         placeholder="Thing's to do"
         value={title}
@@ -27,7 +28,7 @@ const NewBookFoam = () => {
         onChange={(e) => setAuthor(e.target.value)}
         required
       /> */}
-      <input type="submit" value="Add Tasks" />
+      <input className="color-button-dark" type="submit" value="Add Tasks" />
     </form>
   );
 };
