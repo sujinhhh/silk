@@ -53,20 +53,21 @@ function List() {
       }}
     >
       <BookContextProvider>
+        <Navbar />
+
         <Section>
-          <Navbar />
           <BookList />
           <NewBookFoam />
-          <Input
-            colorValue={colorValue}
-            setColorValue={setColorValue}
-            hexValue={hexValue}
-            setHexValue={setHexValue}
-            isDarkText={isDarkText}
-            setIsDarkText={setIsDarkText}
-            setColor={setColor}
-          />
         </Section>
+        <Input
+          colorValue={colorValue}
+          setColorValue={setColorValue}
+          hexValue={hexValue}
+          setHexValue={setHexValue}
+          isDarkText={isDarkText}
+          setIsDarkText={setIsDarkText}
+          setColor={setColor}
+        />
       </BookContextProvider>
 
       {/* <main>
@@ -88,10 +89,17 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
-  padding: 3rem;
+  margin-top: 100px;
 `;
 const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 500px;
+  height: auto;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 2rem;
 `;

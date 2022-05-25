@@ -27,7 +27,7 @@ const NewBookFoam = () => {
         onChange={(e) => setAuthor(e.target.value)}
         required
       /> */}
-      <input type="submit" value="해내고 말거야" />
+      <input type="submit" value="Add Tasks" />
     </form>
   );
 };

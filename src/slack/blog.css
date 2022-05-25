@@ -196,3 +196,28 @@
     font-size: 3rem;
   }
 }
+
+/* Todo List ============================== */
+
+.book-list {
+  display: flex;
+  margin-bottom: 30px;
+}
+.book-list ul {
+  list-style: none;
+}
+.navbar h1 {
+  margin-bottom: 2rem;
+  color: #fff;
+}
+.book-detail {
+  display: flex;
+}
+
+.book-detail :hover {
+  cursor: pointer;
+}
+
+.book-detail h3 {
+  margin-left: 5px;
+}
