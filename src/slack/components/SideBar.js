@@ -25,9 +25,9 @@ function SideBar() {
       <Link to="/blog">
         <SidebarOption Icon={InboxTwoTone} title="Blog" />
       </Link>
-      <Link to="/basic">
+      {/* <Link to="/basic">
         <SidebarOption Icon={InsertEmoticonRounded} title="Basic" />
-      </Link>
+      </Link> */}
     </SidbarContainer>
   );
 }
