@@ -50,5 +50,5 @@ const TodoInput = styled.input`
   margin-right: 10px;
   background-color: #e57373;
   box-shadow: inset 0.2rem 0.2rem 0.5rem rgb(128, 0, 0, 0.5),
-    inset -0.2rem -0.2rem 0.5rem rgba(247, 185, 195, 0.934);
+    inset -0.2rem -0.2rem 0.5rem ;
 `;

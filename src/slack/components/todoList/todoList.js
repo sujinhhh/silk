@@ -1,16 +1,20 @@
 import List from "./List.js";
-import React from "react";
 import styled from "styled-components";
+import { ThemeContext } from "../../contexts/ThemeContext.js";
+import React, { useState } from "react";
 
-function todoList() {
+function TodoList() {
+  const [isDarkText, setIsDarkText] = useState(false);
   return (
     <Container>
-      <List />
+      <ThemeContext.Provider value={{ isDarkText, setIsDarkText }}>
+        <List isDark={isDarkText} setIsDark={setIsDarkText} />
+      </ThemeContext.Provider>
     </Container>
   );
 }
 
-export default todoList;
+export default TodoList;
 
 const Container = styled.div`
   display: flex;

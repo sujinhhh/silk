@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import BookContextProvider from "../../contexts/BookContext";
 import BookList from "./BookList";
 import NewBookFoam from "./BookFoam";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import styled from "styled-components";
 import Input from "./Input";
 import colorNames from "colornames";
@@ -14,7 +15,8 @@ function List() {
   // const [list, setList] = useState([]);
   const [colorValue, setColorValue] = useState([]);
   const [hexValue, setHexValue] = useState("");
-  const [isDarkText, setIsDarkText] = useState(true);
+  const { isDarkText, setIsDarkText } = useContext(ThemeContext);
+  // const [isDarkText, setIsDarkText] = useState(true);
   // const [fetchError, setFetchError] = useState(null);
   // const [isLoading, setIsLoading] = useState(true);
 
@@ -88,7 +90,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
   margin-top: 100px;
 `;
 const Section = styled.div`

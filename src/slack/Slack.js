@@ -21,8 +21,9 @@ import "./blog.css";
 import api from "../api/posts";
 import EditPost from "./components/blog/EditPost";
 import useWindowSize from "../hooks/useWindowSize";
-import todoList from "./components/todoList/todoList";
+import TodoList from "./components/todoList/TodoList";
 import MainHome from "./components/main/MainHome";
+import BasicHome from "./basic/BasicHome";
 
 function Slack() {
   const history = useHistory();
@@ -147,8 +148,9 @@ function Slack() {
           <Main>
             <Route exact path="/" component={MainHome} />
             <Route path="/air" component={AirBnb} />
-            <Route path="/list" component={todoList} />
+            <Route path="/list" component={TodoList} />
             <Route path="/fetch" component={FetchData} />
+            {/* <Route path="/basic" component={BasicHome} /> */}
             <Route exact path="/blog" width={width}>
               {searchResults && <BlogHome posts={searchResults} />}
               {!searchResults && <Missing />}

@@ -6,6 +6,7 @@ import {
   InsertComment,
   AccessAlarmTwoTone,
   DataUsage,
+  InsertEmoticonRounded,
 } from "@material-ui/icons";
 import SidebarOption from "./SidebarOption";
 
@@ -23,6 +24,9 @@ function SideBar() {
       </Link>
       <Link to="/blog">
         <SidebarOption Icon={InboxTwoTone} title="Blog" />
+      </Link>
+      <Link to="/basic">
+        <SidebarOption Icon={InsertEmoticonRounded} title="Basic" />
       </Link>
     </SidbarContainer>
   );
