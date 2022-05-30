@@ -96,7 +96,8 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   height: auto;
   background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;

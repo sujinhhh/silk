@@ -4,6 +4,7 @@
   display: flex;
   width: 100%;
   justify-content: left;
+  background: linear-gradient(to right, #added7, #d3dead);
 }
 .fetch-form {
   width: 88%;

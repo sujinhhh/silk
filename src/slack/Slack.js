@@ -23,7 +23,7 @@ import EditPost from "./components/blog/EditPost";
 import useWindowSize from "../hooks/useWindowSize";
 import TodoList from "./components/todoList/TodoList";
 import MainHome from "./components/main/MainHome";
-import BasicHome from "./basic/BasicHome";
+import BasicHome from "./components/basic/BasicHome";
 
 function Slack() {
   const history = useHistory();
@@ -49,6 +49,18 @@ function Slack() {
     {
       id: 4,
       title: "4th post",
+      datetime: "July 16, 2021 11:47:48 AM",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. two",
+    },
+    {
+      id: 5,
+      title: "5th post",
+      datetime: "July 16, 2021 11:47:39 AM",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    },
+    {
+      id: 6,
+      title: "6th post",
       datetime: "July 16, 2021 11:47:48 AM",
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. two",
     },
@@ -150,7 +162,7 @@ function Slack() {
             <Route path="/air" component={AirBnb} />
             <Route path="/list" component={TodoList} />
             <Route path="/fetch" component={FetchData} />
-            {/* <Route path="/basic" component={BasicHome} /> */}
+            <Route path="/basic" component={BasicHome} />
             <Route exact path="/blog" width={width}>
               {searchResults && <BlogHome posts={searchResults} />}
               {!searchResults && <Missing />}
@@ -200,6 +212,6 @@ const Main = styled.div`
   justify-content: center;
   margin-top: 100px;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   overflow-y: auto;
 `;

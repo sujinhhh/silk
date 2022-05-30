@@ -3,7 +3,7 @@ import Post from "./Post";
 
 function Feed({ posts }) {
   return (
-    <div>
+    <div className="feed-grid">
       {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}

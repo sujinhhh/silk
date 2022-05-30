@@ -183,6 +183,7 @@ const Img = styled.div`
 `;
 
 const Text = styled.div`
+  color: lightgrey;
   padding: 25px 0;
   > button {
     margin-left: 5px;

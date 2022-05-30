@@ -4,7 +4,9 @@
   align-items: center;
 }
 .air-travel {
-  width: 700px;
+  width: 90%;
+  max-width: 700px;
+
   height: 500px;
   position: relative;
   background-color: #eee;
@@ -26,7 +28,8 @@
   border-bottom: 1px solid #eee;
 }
 .addForm input {
-  width: 200px;
+  width: 90%;
+  max-width: 200px;
   margin: 0 3px 0 20px;
   flex-grow: 1;
   outline: none;
@@ -45,13 +48,14 @@ button {
   padding: 0.5rem;
   font-size: 1rem;
   background-color: rgb(218, 178, 236, 1);
-  color: rgb(79, 55, 126);
+  color: black;
   cursor: pointer;
   border: 1px solid rgb(220, 220, 220);
 }
 button:hover {
   color: white;
-  background-color: blueviolet;
+  background-color: rgb(231, 90, 90);
   outline: none;
   transition: all ease-in-out 0.2s;
+  border: 0.5px solid rgb(220, 220, 220);
 }

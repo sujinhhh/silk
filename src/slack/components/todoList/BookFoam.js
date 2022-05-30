@@ -16,7 +16,7 @@ const NewBookFoam = () => {
       <input
         className="color-input-dark"
         type="text"
-        placeholder="Thing's to do"
+        placeholder="Things to do"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required

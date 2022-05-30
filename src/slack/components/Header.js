@@ -17,9 +17,7 @@ const Header = ({ search, setSearch, width }) => {
           <Link to="/">
             <HeaderLeft>
               <img src="./aaaaa.png" alt="" />
-              <h3>
-                <strong>P</strong>rojects
-              </h3>
+              <h3>Projects</h3>
             </HeaderLeft>
           </Link>
           <HeaderRight>
@@ -142,7 +140,9 @@ const HeaderLeft = styled.div`
     margin-left: 10px;
     bottom: 30%;
     right: -60px;
-    color: #ff8a80;
+    background: -webkit-linear-gradient(#ff0844, #ffb199);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: "Pangolin", cursive;
   }
   img {
@@ -192,12 +192,15 @@ const HeaderSearch = styled.form`
   > input {
     background-color: transparent;
     border: none;
-    text-align: center;
+    /* text-align: center; */
     min-width: 20vw;
     outline: 0;
     color: white;
     font-size: 17px;
     padding: 5px 0;
+  }
+  > .MuiSvgIcon-root {
+    padding-left: 5px;
   }
 `;
 
