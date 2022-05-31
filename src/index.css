@@ -25,3 +25,6 @@ code {
   --button-white: rgba(248, 175, 187, 0.934);
   --button-dark: rgb(128, 0, 0, 0.5);
 }
+.m-l-1 {
+  margin-left: 1rem;
+}

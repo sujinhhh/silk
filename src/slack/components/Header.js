@@ -2,14 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import CreateIcon from "@material-ui/icons/Create";
-
+import { useContext } from "react";
+import DataContext from "../contexts/DataContext";
 import {
   FiberManualRecord,
   SearchTwoTone,
   HelpOutline,
 } from "@material-ui/icons";
 
-const Header = ({ search, setSearch, width }) => {
+const Header = () => {
+  const { width, search, setSearch } = useContext(DataContext);
   return (
     <>
       {width < 768 ? (

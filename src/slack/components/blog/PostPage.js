@@ -1,8 +1,11 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
+import { useContext } from "react";
+import DataContext from "../../contexts/DataContext";
 
-function PostPage({ posts, handleDelete }) {
+function PostPage() {
   const { id } = useParams();
+  const { posts, handleDelete } = useContext(DataContext);
   const post = posts.find((post) => post.id.toString() === id);
   return (
     <main className="PostPage">
@@ -12,15 +15,17 @@ function PostPage({ posts, handleDelete }) {
             <h2>{post.title}</h2>
             <p className="postDate">{post.datetime}</p>
             <p className="postBody">{post.body}</p>
-            <Link to={`/edit/${post.id}`}>
-              <button className="editButton">Edit Post</button>
-            </Link>
-            <button
-              className="deleteButton"
-              onClick={() => handleDelete(post.id)}
-            >
-              Delete Post
-            </button>
+            <div className="blog-buttons">
+              <Link to={`/edit/${post.id}`}>
+                <button className="color-button">Edit Post</button>
+              </Link>
+              <button
+                className="color-button m-l-1"
+                onClick={() => handleDelete(post.id)}
+              >
+                Delete Post
+              </button>
+            </div>
           </>
         )}
         {!post && (

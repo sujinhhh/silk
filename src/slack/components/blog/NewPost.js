@@ -1,16 +1,18 @@
-import { SendTwoTone } from "@material-ui/icons";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import DataContext from "../../contexts/DataContext";
 
-function NewPost({
-  handleSubmit,
-  postTitle,
-  setPostTitle,
-  postBody,
-  setPostBody,
-  done,
-  setDone,
-}) {
+function NewPost() {
+  const {
+    handleSubmit,
+    postTitle,
+    setPostTitle,
+    postBody,
+    setPostBody,
+    done,
+    setDone,
+  } = useContext(DataContext);
+
   return (
     <main className="NewPost">
       {!done ? (

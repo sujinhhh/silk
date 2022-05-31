@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import { useContext } from "react";
+import DataContext from "../../contexts/DataContext";
 import Feed from "./Feed";
 
-function BlogHome({ posts }) {
+function BlogHome() {
+  const { searchResults, posts } = useContext(DataContext);
+
   return (
     <BlogContainer>
-      <Feed posts={posts} />
+      {posts.length ? (
+        <Feed posts={searchResults} />
+      ) : (
+        <p>Sorry. No posts to display</p>
+      )}
     </BlogContainer>
   );
 }
