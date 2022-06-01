@@ -13,6 +13,7 @@ function PostPage() {
         {post && (
           <>
             <h2>{post.title}</h2>
+            <img src={post.img} alt="" />
             <p className="postDate">{post.datetime}</p>
             <p className="postBody">{post.body}</p>
             <div className="blog-buttons">
