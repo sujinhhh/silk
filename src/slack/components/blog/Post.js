@@ -6,6 +6,7 @@ function Post({ post }) {
     <article className="post">
       <Link to={`/post/${post.id}`}>
         <h2>{post.title}</h2>
+        <img src={post.img} alt="" />
         <p className="postDate">{post.datetime}</p>
       </Link>
       <p className="postBody">

@@ -3,7 +3,7 @@
 .blog-container {
   width: 100%;
   max-width: 800px;
-  height: 100vh;
+
   display: grid;
   flex-direction: column;
   justify-content: flex-start;
@@ -78,6 +78,18 @@
   margin-top: 1rem;
   padding: 2rem;
   border-bottom: 1px solid lightgray;
+  box-shadow: 28px 28px 50px rgba(13, 39, 80, 0.16),
+    -23px -23px 45px rgba(255, 255, 255, 1),
+    inset -31px -31px 43px rgba(255, 255, 255, 0.64),
+    inset 26px 26px 48px rgba(13, 39, 80, 0.16);
+}
+
+.post h2 {
+  margin-bottom: 1rem;
+}
+
+.post img {
+  width: 100%;
 }
 
 .post a {

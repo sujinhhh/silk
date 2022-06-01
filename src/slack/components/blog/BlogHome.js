@@ -25,5 +25,4 @@ const BlogContainer = styled.div`
   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
   display: flex;
   justify-content: center;
-  height: 100vh;
 `;

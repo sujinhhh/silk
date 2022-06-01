@@ -3,16 +3,19 @@ import Timer from "./Timer";
 import "./basic.css";
 import Counter from "./Counter";
 import Componet01 from "./Componet01";
+import NumberGame from "./NumberGame";
 
 function BasicHome() {
   return (
     <div className="basic-container">
       <div className="flex-container">
-        <Counter />
+        {/* <Counter /> */}
         <Componet01 />
       </div>
       <div className="grid-container">
-        <div className="grid01">1</div>
+        <div className="grid01">
+          <NumberGame />
+        </div>
         <div className="grid02">2</div>
         <div className="grid03">3</div>
         <div className="grid04">4</div>
