@@ -4,6 +4,7 @@ import "./basic.css";
 import Counter from "./Counter";
 import Componet01 from "./Componet01";
 import NumberGame from "./NumberGame";
+import BankApp from "./BankApp";
 
 function BasicHome() {
   return (
@@ -16,7 +17,9 @@ function BasicHome() {
         <div className="grid01">
           <NumberGame />
         </div>
-        <div className="grid02">2</div>
+        <div className="grid02">
+          <BankApp />
+        </div>
         <div className="grid03">3</div>
         <div className="grid04">4</div>
         <div className="grid05">5</div>
