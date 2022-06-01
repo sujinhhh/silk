@@ -11,7 +11,7 @@ import PostPage from "./components/blog/PostPage";
 import NewPost from "./components/blog/NewPost";
 import "./blog.css";
 import EditPost from "./components/blog/EditPost";
-// import TodoList from "./components/todoList/TodoList";
+import TodoList from "./components/todoList/TodoList";
 import MainHome from "./components/main/MainHome";
 import BasicHome from "./components/basic/BasicHome";
 import { DataProvider } from "./contexts/DataContext";
@@ -27,7 +27,7 @@ function Slack() {
             <Main>
               <Route exact path="/" component={MainHome} />
               <Route path="/air" component={AirBnb} />
-              {/* <Route path="/list" component={TodoList} /> */}
+              <Route path="/list" component={TodoList} />
               <Route path="/fetch" component={FetchData} />
               <Route path="/basic" component={BasicHome} />
               <Route path="/blog" component={BlogHome} />
