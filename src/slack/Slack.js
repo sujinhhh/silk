@@ -11,7 +11,7 @@ import PostPage from "./components/blog/PostPage";
 import NewPost from "./components/blog/NewPost";
 import "./blog.css";
 import EditPost from "./components/blog/EditPost";
-import TodoList from "./components/todoList/TodoList";
+import TodoList from "./components/todoList/TodoList.js";
 import MainHome from "./components/main/MainHome";
 import BasicHome from "./components/basic/BasicHome";
 import { DataProvider } from "./contexts/DataContext";
