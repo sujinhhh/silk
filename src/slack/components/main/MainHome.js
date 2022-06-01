@@ -46,7 +46,7 @@ const SectionContaier = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  /* background-color: black; */
   padding: 3rem;
   margin-top: -50px;
   position: relative;
